@@ -13,6 +13,8 @@ class TestZalupa:
         try:
             assert WebDriverWait(browser, 10).until(EC.visibility_of_element_located(
                 (By.CSS_SELECTOR, '.btn-add-to-basket')))
+            # Для тех, кто в танке. Это bool, возвращающий True, если кнопка есть.
+            # assert и так ожидает True, поэтому дополнительно прописывать '==' не требуется.
         except Exception as e:
             print('Нет кнопки "Добавить в корзину"')
             raise e
